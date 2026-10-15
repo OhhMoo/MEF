@@ -1,0 +1,9 @@
+# Direct dependencies used by the tested project environment (Python 3.12).
+# GPU runtime was verified with the CUDA 13.0 build of torch 2.11.0 on L40S.
+torch==2.11.0
+numpy==2.4.4
+scipy==1.17.1
+rdkit==2026.9.1
+PyYAML==6.0.3
+tqdm==4.67.3
+pytest==9.1.1

@@ -1,0 +1,37 @@
+# Python / Packaging / Environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+
+# Agent / IDE / Local Configs
+AGENTS.md
+CLAUDE.md
+.cursor/
+.claude/
+.agents/
+_archive/
+*.lock
+
+# Upstream Repositories
+0_external_repo/
+
+# Data Storage
+2_data_storage/raw/*
+2_data_storage/processed/*
+!2_data_storage/raw/.gitkeep
+!2_data_storage/processed/.gitkeep
+
+# Model Training Configs & Cluster Slurm Scripts
+3_model_training/configs/
+3_model_training/scripts/*.slurm
+
+# Experimental & Test Outputs / Checkpoints
+*.pt
+*.pth
+4_experimental_result/result/
+5_test/results/
+
+# Local LaTeX Drafts
+*.tex

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "molecular-edit-flows"
+version = "0.1.0"
+description = "Evidence-Calibrated Molecular Edit Flows for low-data, lead-preserving multi-property molecular optimization"
+requires-python = ">=3.12"
+dependencies = ["torch>=2.3", "numpy>=1.26", "scipy>=1.11", "rdkit>=2024.3", "PyYAML>=6", "tqdm>=4.66"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+emf-train = "emf.train:main"
+emf-prepare = "emf.data:main"
+
+[tool.setuptools]
+package-dir = {"" = "3_model_training"}
+
+[tool.setuptools.packages.find]
+where = ["3_model_training"]
+include = ["emf*"]
+
+[tool.pytest.ini_options]
+testpaths = ["5_test"]
+pythonpath = ["3_model_training"]
+addopts = "-ra"
+markers = ["gpu: requires an allocated CUDA GPU", "operation: trains and samples a small real pipeline"]
